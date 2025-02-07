@@ -1,6 +1,5 @@
 //HOMEPAGE
 
-
 import Image from "next/image";
 import Head from "next/head";
 import navbar from "./components/navbar";
@@ -48,14 +47,16 @@ export default function HomePage() {
       <div style={styles.container}>
         <div style={styles.imageWrapper}>
           <div style={styles.imageContainer}>
-            <Image
-              src={journal}
-              alt="Open journal on blanket with pen"
-              placeholder="blur"
-              width={300}
-              height={300}
-              priority="false"
-            />
+            <Link href="/posts">
+              <Image
+                src={journal}
+                alt="Open journal on blanket with pen"
+                placeholder="blur"
+                width={300}
+                height={300}
+                priority="false"
+              />
+            </Link>
             <p style={styles.imageText}>Cultivating an attitude of gratitude</p>
           </div>
           <div style={styles.imageContainer}>

@@ -37,7 +37,10 @@ export default async function PostsPage({ searchParams }) {
         {posts.length > 0 ? (
           posts.map((post) => (
             <li key={post.id}>
-              <em>{post.title}</em>
+              {/* Wrap the post title with a Link component to navigate to the post details */}
+              <Link href={`/posts/${post.id}`}>
+                <em>{post.title}</em>
+              </Link>
               <p>{post.content}</p>
             </li>
           ))
