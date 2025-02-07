@@ -1,4 +1,6 @@
 import pg from "pg";
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 export default function NewPostPage() {
   async function handleSavePost(formData) {
@@ -14,6 +16,9 @@ export default function NewPostPage() {
       content,
     ]);
     console.log("Post saved!");
+
+    revalidatePath("/posts");
+    redirect("/posts");
   }
 
   return (

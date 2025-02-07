@@ -1,8 +1,7 @@
 import Navbar from "../components/navbar";
 import Link from "next/link";
-
-//
 import pg from "pg";
+import Form from "@/app/components/Form";
 
 export default async function PostsPage() {
   const db = new pg.Pool({
@@ -19,12 +18,12 @@ export default async function PostsPage() {
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
-            {post.date}
-            {post.title}
-            {post.content}
+            <strong>{post.date}</strong> - <em>{post.title}</em>
+            <p>{post.content}</p>
           </li>
         ))}
       </ul>
+      <Form />
     </div>
   );
 }
