@@ -2,6 +2,7 @@ import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
 import Link from "next/link";
+import postStyles from "./posts.module.css";
 
 const roboto = Roboto_Mono({ weight: "300", subsets: ["latin"] });
 

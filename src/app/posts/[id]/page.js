@@ -1,5 +1,6 @@
 import pg from "pg";
 import Form from "@/app/components/Form";
+// import postStyles from "src/app/posts.module.css";
 
 export default async function PostsPage() {
   const db = new pg.Pool({
@@ -11,6 +12,7 @@ export default async function PostsPage() {
   console.log(posts);
 
   return (
+    // <div className="container">
     <div>
       <h1>Slow Living Posts</h1>
       <ul>

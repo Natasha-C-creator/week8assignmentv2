@@ -1,10 +1,11 @@
-//Home page, showing nav bar and a list of all of the
-
 import Image from "next/image";
 import Head from "next/head";
 import navbar from "./components/navbar";
 import Header from "./components/header";
 import Link from "next/link";
+// import journal from "public/journal.jpeg";
+// import food from "public/food.jpg";
+// import walking from "public/walking.jpg";
 
 const styles = {
   container: {
@@ -41,29 +42,27 @@ export default function HomePage() {
       </Head>
       <navbar />
       <Header />
-      <div style={styles.container}>
+      {/* <div style={styles.container}>
         <div style={styles.imageWrapper}>
           <div style={styles.imageContainer}>
             <Image
-              Link
-              href="./posts/1"
-              src="/journal.jpeg"
+              src={journal}
               alt="Open journal on blanket with pen"
+              placeholder="blur"
               width={300}
               height={300}
               priority="false"
-              // placeholder="blur"
             />
             <p style={styles.imageText}>Cultivating an attitude of gratitude</p>
           </div>
           <div style={styles.imageContainer}>
             <Image
-              src="/food.jpg"
-              alt="Sandwich with boiled egg width={300}"
+              src={food}
+              alt="Sandwich with egg on top"
+              placeholder="blur"
               width={300}
               height={300}
               priority="false"
-              // placeholder="blur"
             />
             <p style={styles.imageText}>
               10 foods that nourish the soul, and 2 that will surprise you
@@ -71,17 +70,17 @@ export default function HomePage() {
           </div>
           <div style={styles.imageContainer}>
             <Image
-              src="/walking.jpg"
+              src={walking}
               alt="Two women walking in a forest"
+              placeholder="blur"
               width={300}
               height={300}
               priority="false"
-              // placeholder="blur"
             />
             <p style={styles.imageText}>Why it is time to try forest bathing</p>
-          </div>
-        </div>
-      </div>
+          </div> */}
+        {/* </div>
+      </div> */}
     </>
   );
 }

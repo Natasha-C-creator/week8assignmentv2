@@ -18,7 +18,7 @@ const navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/posts/new">
+                <Link href="/posts/create-post">
                   <p>Create A Post</p>
                 </Link>
               </li>
