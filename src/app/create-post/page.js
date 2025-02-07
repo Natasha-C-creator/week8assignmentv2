@@ -1,3 +1,5 @@
+//CREATE A POST PAGE
+
 import pg from "pg";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
@@ -24,13 +26,17 @@ export default function NewPostPage() {
   return (
     <form action={handleSavePost}>
       <h1>Create your own article for the Slow Living page</h1>
-      <label htmlFor="date">Date</label>
-      <input id="date" name="date" type="text" />
-      <label htmlFor="title">Title</label>
+      <label htmlFor="title" required>
+        Title
+      </label>
       <input id="title" name="title" type="text" />
-      <label htmlFor="content">Content</label>
+      <label htmlFor="content" required>
+        Content
+      </label>
       <textarea id="content" name="content" />
-      <button type="submit">Save</button>
+      <button className="button-style" type="submit" required>
+        Submit
+      </button>
     </form>
   );
 }

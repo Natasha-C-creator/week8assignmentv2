@@ -1,11 +1,14 @@
+//HOMEPAGE
+
+
 import Image from "next/image";
 import Head from "next/head";
 import navbar from "./components/navbar";
 import Header from "./components/header";
 import Link from "next/link";
-// import journal from "public/journal.jpeg";
-// import food from "public/food.jpg";
-// import walking from "public/walking.jpg";
+import journal from "@/public/journal.jpeg";
+import food from "@/public/food.jpg";
+import walking from "@/public/walking.jpg";
 
 const styles = {
   container: {
@@ -42,7 +45,7 @@ export default function HomePage() {
       </Head>
       <navbar />
       <Header />
-      {/* <div style={styles.container}>
+      <div style={styles.container}>
         <div style={styles.imageWrapper}>
           <div style={styles.imageContainer}>
             <Image
@@ -78,9 +81,9 @@ export default function HomePage() {
               priority="false"
             />
             <p style={styles.imageText}>Why it is time to try forest bathing</p>
-          </div> */}
-        {/* </div>
-      </div> */}
+          </div>
+        </div>
+      </div>
     </>
   );
 }

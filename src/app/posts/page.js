@@ -1,48 +1,55 @@
+//---------------------
+//POSTS PAGE WITH CREATE POST BUTTON
+//---------------------
+
 import Navbar from "../components/navbar";
 import Link from "next/link";
 import pg from "pg";
 import Form from "@/app/components/Form";
 
 export default async function PostsPage({ searchParams }) {
-  const query = await searchParams;
+  const query = searchParams || {};
   console.log("searchParams", query);
   const db = new pg.Pool({
     connectionString: process.env.DATABASE_URL,
   });
 
-  const sortColumn = query.sortBy || "date";
-  const sortOrder = query.sort === "desc" ? "DESC" : "ASC";
-
-  // const posts = (await db.query(`SELECT * FROM posts`)).rows;
-  const posts = (
-    await db.query(`
-    SELECT * FROM posts
-    ORDER BY ${sortColumn} ${sortOrder}
-  `)
-  ).rows;
-
-  console.log(posts);
+  let posts = [];
+  try {
+    const res = await db.query("SELECT * FROM posts");
+    posts = res.rows;
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+  }
 
   if (query.sort === "desc") {
     posts.reverse();
   }
 
+  console.log(posts);
+
   return (
     <div>
       <h1>Slow Living Posts</h1>
-      <Link href="/posts?sort=asc&sortBy=date">Sort by Date Ascending</Link> -
-      <Link href="/posts?sort=desc&sortBy=date">Sort by Date Descending</Link> -
-      <Link href="/posts?sort=asc&sortBy=title">Sort by Title Ascending</Link> -
-      <Link href="/posts?sort=desc&sortBy=title">Sort by Title Descending</Link>
+      <Link href="/posts?sort=asc">Sort ascending</Link> -{" "}
+      <Link href="/posts?sort=desc">Sort descending</Link>
       <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <strong>{post.date}</strong> - <em>{post.title}</em>
-            <p>{post.content}</p>
-          </li>
-        ))}
+        {posts.length > 0 ? (
+          posts.map((post) => (
+            <li key={post.id}>
+              <em>{post.title}</em>
+              <p>{post.content}</p>
+            </li>
+          ))
+        ) : (
+          <li>No posts available</li>
+        )}
       </ul>
-      <Form />
+      <Link href="/create-post">
+        <button class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
+          Create a Post
+        </button>
+      </Link>
     </div>
   );
 }
