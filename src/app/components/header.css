@@ -1,0 +1,16 @@
+.header {
+  background-color: rgb(182, 207, 161);
+  font-size: 3rem;
+  padding: 25px;
+  gap: 100px;
+  display: flex;
+  justify-content: center;
+  /* border-radius: 20px; */
+  border-style: solid;
+  border-color: rgb(164, 135, 156);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  color: rgb(44, 6, 43);
+}
