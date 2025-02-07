@@ -1,5 +1,5 @@
 import Navbar from "../components/navbar";
-import postData from "/lib/seed.js";
+// import postData from "/lib/seed.js";
 
 //This page will be where the posts are stored
 // PG POOL?
