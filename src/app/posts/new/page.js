@@ -18,6 +18,9 @@ export default function NewPostPage() {
 
   return (
     <form action={handleSavePost}>
+      <h1>Create your own article for the Slow Living page</h1>
+      <label htmlFor="date">Date</label>
+      <input id="date" name="date" type="text" />
       <label htmlFor="title">Title</label>
       <input id="title" name="title" type="text" />
       <label htmlFor="content">Content</label>
