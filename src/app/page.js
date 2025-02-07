@@ -60,27 +60,31 @@ export default function HomePage() {
             <p style={styles.imageText}>Cultivating an attitude of gratitude</p>
           </div>
           <div style={styles.imageContainer}>
-            <Image
-              src={food}
-              alt="Sandwich with egg on top"
-              placeholder="blur"
-              width={300}
-              height={300}
-              priority="false"
-            />
+            <Link href="/posts">
+              <Image
+                src={food}
+                alt="Sandwich with egg on top"
+                placeholder="blur"
+                width={300}
+                height={300}
+                priority="false"
+              />
+            </Link>
             <p style={styles.imageText}>
               10 foods that nourish the soul, and 2 that will surprise you
             </p>
           </div>
           <div style={styles.imageContainer}>
-            <Image
-              src={walking}
-              alt="Two women walking in a forest"
-              placeholder="blur"
-              width={300}
-              height={300}
-              priority="false"
-            />
+            <Link href="/posts">
+              <Image
+                src={walking}
+                alt="Two women walking in a forest"
+                placeholder="blur"
+                width={300}
+                height={300}
+                priority="false"
+              />
+            </Link>
             <p style={styles.imageText}>Why it is time to try forest bathing</p>
           </div>
         </div>

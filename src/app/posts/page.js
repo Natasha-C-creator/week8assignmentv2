@@ -29,11 +29,16 @@ export default async function PostsPage({ searchParams }) {
   console.log(posts);
 
   return (
-    <div>
-      <h1>Slow Living Posts</h1>
-      <Link href="/posts?sort=asc">Sort ascending</Link> -{" "}
-      <Link href="/posts?sort=desc">Sort descending</Link>
-      <ul>
+    <div className="posts-container">
+      <h1 className="posts-title">Slow Living Posts</h1>
+      <Link href="/posts?sort=asc" className="sort-links">
+        Sort ascending
+      </Link>{" "}
+      -{" "}
+      <Link href="/posts?sort=desc" className="sort-links">
+        Sort descending
+      </Link>
+      <ul className="posts-list">
         {posts.length > 0 ? (
           posts.map((post) => (
             <li key={post.id}>
@@ -49,9 +54,7 @@ export default async function PostsPage({ searchParams }) {
         )}
       </ul>
       <Link href="/create-post">
-        <button class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
-          Create a Post
-        </button>
+        <button className="button">Create a Post</button>
       </Link>
     </div>
   );

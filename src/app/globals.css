@@ -30,3 +30,75 @@ body {
 .button-style {
   @apply bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded;
 }
+
+/* globals.css */
+
+/* Basic styling for the container */
+.posts-container {
+  padding: 30px;
+  background-color: #a8b79c;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the title */
+.posts-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+/* Styling for the links that sort posts */
+.sort-links {
+  font-size: 1rem;
+  color: #295813;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.sort-links:hover {
+  text-decoration: underline;
+}
+
+/* List styles */
+ul.posts-list {
+  width: auto;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul.posts-list li {
+  background-color: #e8e0e0f8;
+  padding: 15px;
+  border: 1px solid #200101;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Styling for the post title link */
+ul.posts-list li a {
+  color: #295813;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+ul.posts-list li a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: transparent;
+  color: #0f571a;
+  font-weight: bold;
+  border: 2px solid #0b5a13;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0e640a;
+  color: white;
+}
