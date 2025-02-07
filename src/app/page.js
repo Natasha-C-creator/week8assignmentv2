@@ -4,6 +4,7 @@ import Image from "next/image";
 import Head from "next/head";
 import navbar from "./components/navbar";
 import Header from "./components/header";
+import Link from "next/link";
 
 const styles = {
   container: {
@@ -44,6 +45,8 @@ export default function HomePage() {
         <div style={styles.imageWrapper}>
           <div style={styles.imageContainer}>
             <Image
+              Link
+              href="./posts/1"
               src="/journal.jpeg"
               alt="Open journal on blanket with pen"
               width={300}

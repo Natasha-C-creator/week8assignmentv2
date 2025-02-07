@@ -43,6 +43,7 @@ https://coolors.co/palettes/popular
 unsplash.com
 https://medium.com/@a.pirus/how-to-create-a-responsive-navigation-bar-in-next-js-13-e5540789a017
 https://nextjs.org/docs/pages/building-your-application/routing/linking-and-navigating
+https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes
 
 ----What errors or bugs did you encounter while completing your assignment? How did you solve them?
 
