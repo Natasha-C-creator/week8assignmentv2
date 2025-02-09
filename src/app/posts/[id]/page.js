@@ -1,35 +1,44 @@
 //---------------------
 //THIS PAGE SHOULD SHOW INDIVIDUAL POSTS
-// //---------------------
+//---------------------
 
-// import pg from "pg";
-// import Form from "@/app/components/Form";
-// import styles from "@/app/posts.module.css";
-// import { redirect } from "next/navigation";
+import pg from "pg";
 
-// export default async function PostsPage() {
-//   const db = new pg.Pool({
-//     connectionString: process.env.DATABASE_URL,
-//   });
+export async function generateMetadata({ params }) {
+  const { id } = params;
+  const db = new pg.Pool({
+    connectionString: process.env.DATABASE_URL,
+  });
+}
 
-//   const posts = (await db.query(`SELECT * FROM posts`)).rows;
+export default async function PostPage({ params }) {
+  const { id } = params;
+  const slug = await params;
+  console.log(slug);
 
-//   console.log(posts);
+  const db = new pg.Pool({
+    connectionString: process.env.DATABASE_URL,
+  });
 
-//   return (
-//     // <div className="container">
-//     <div>
-//       <h1>HURRAH</h1>
-//       <ul>
-//         {posts.map((post) => (
-//           <li key={post.id}>
-//             {post.title}
-//             {post.content}
-//             {post.date}
-//           </li>
-//         ))}
-//       </ul>
-//       <Form />
-//     </div>
-//   );
-// }
+  try {
+    const result = await db.query("SELECT * FROM posts WHERE id = $1", [id]);
+
+    if (result.rows.length) {
+      const post = result.rows[0];
+      return (
+        <div>
+          <h1>
+            {post.title} Post Page {slug.id}
+          </h1>
+          <p>{post.content}</p>
+          <p>{post.date}</p>
+        </div>
+      );
+    } else {
+      return <h1>Post Not Found</h1>;
+    }
+  } catch (error) {
+    console.error(error);
+    return <h1>Error loading post</h1>;
+  }
+}

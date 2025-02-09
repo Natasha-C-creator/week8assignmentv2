@@ -7,6 +7,11 @@ import Link from "next/link";
 import pg from "pg";
 import Form from "@/app/components/Form";
 
+export const metadata = {
+  title: "Posts",
+  description: "A simple blog built with Next.js",
+};
+
 export default async function PostsPage({ searchParams }) {
   const query = searchParams || {};
   console.log("searchParams", query);
@@ -42,7 +47,6 @@ export default async function PostsPage({ searchParams }) {
         {posts.length > 0 ? (
           posts.map((post) => (
             <li key={post.id}>
-              {/* Wrap the post title with a Link component to navigate to the post details */}
               <Link href={`/posts/${post.id}`}>
                 <em>{post.title}</em>
               </Link>

@@ -36,6 +36,11 @@ const styles = {
   },
 };
 
+export const metadata = {
+  title: "Homepage",
+  description: "A simple blog built with Next.js",
+};
+
 export default function HomePage() {
   return (
     <>
@@ -57,7 +62,7 @@ export default function HomePage() {
                 priority="false"
               />
             </Link>
-            <p style={styles.imageText}>Cultivating an attitude of gratitude</p>
+            <p style={styles.imageText} Link href="/posts/5">Cultivating an attitude of gratitude</p>
           </div>
           <div style={styles.imageContainer}>
             <Link href="/posts">

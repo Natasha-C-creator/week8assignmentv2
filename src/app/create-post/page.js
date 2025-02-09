@@ -34,7 +34,7 @@ export default function NewPostPage() {
         Content
       </label>
       <textarea id="content" name="content" />
-      <button className="button-style" type="submit" required>
+      <button className="button" type="submit" required>
         Submit
       </button>
     </form>
