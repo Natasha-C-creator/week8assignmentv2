@@ -14,7 +14,7 @@ export default function CommentsForm() {
 
   return (
     <form action={handleSaveComment}>
-      <label htmlFor="comment">Comment</label>
+      <label htmlFor="comment">Add Comment</label>
       <input id="comment" name="comment" type="text" />
       <button type="submit">Save</button>
     </form>
