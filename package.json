@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "accessibility": "^6.0.7",
     "next": "15.1.6",
     "pg": "^8.13.1",
     "react": "^19.0.0",

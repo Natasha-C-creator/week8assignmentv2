@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./components/navbar";
 import Link from "next/link";
 import postStyles from "./posts.module.css";
+import AccessibilityBar from "./components/Accessibility";
 
 const roboto = Roboto_Mono({ weight: "300", subsets: ["latin"] });
 
@@ -15,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Navbar />
+        <AccessibilityBar />
         {children}
       </body>
     </html>

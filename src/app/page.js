@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Head from "next/head";
-import navbar from "./components/navbar";
+import Navbar from "./components/navbar";
 import Header from "./components/header";
 import Link from "next/link";
 import journal from "@/public/journal.jpeg";
@@ -47,7 +47,7 @@ export default function HomePage() {
       <Head>
         <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>
-      <navbar />
+      <Navbar />
       <Header />
       <div style={styles.container}>
         <div style={styles.imageWrapper}>

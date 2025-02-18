@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Accessibility from "./Accessibility";
 
 const navbar = () => {
   return (
@@ -26,6 +27,7 @@ const navbar = () => {
                 <Link href="/about">
                   <p>About</p>
                 </Link>
+                
               </li>
             </ul>
           </div>
